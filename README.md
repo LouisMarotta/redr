@@ -18,7 +18,17 @@ To compile for Tizen you first need to install [Tizen-Flutter](https://github.co
   flutter pub run build_runner build --delete-conflicting-outputs
   flutter build tpk
 ```
-    
+
+__Optimizing for lower end devices:__
+If you encounter jank/lag in lower end devices (especially with Mali GPU's), first run the code with 
+```bash
+   flutter run --profile --cache-sksl
+```
+then build with
+```bash
+  flutter build PACKAGE --bundle-sksl-path flutter_01.sksl.json
+```
+
 ## Donations
 
 If you like the stuff I make and are financially able please consider donating. Your support allows me to dedicate more time to this and other FOSS projects

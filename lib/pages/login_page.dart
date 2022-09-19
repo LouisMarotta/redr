@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../api/auth.dart' as api;
 
@@ -23,8 +22,9 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.black,
-        margin: EdgeInsets.fromLTRB(30, 30, 30, 15),
+      color: Colors.black,
+      margin: EdgeInsets.fromLTRB(30, 30, 30, 15),
+      child: Center(
         child: Form(
           child: Column(
             children: [
@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () async {
                       api.redditGetAccessCode();
                     },
-                    child: Padding(
+                    child: const Padding(
                       padding: EdgeInsets.all(8),
                       child: Text(
                         "Log In",
@@ -55,6 +55,8 @@ class _LoginPageState extends State<LoginPage> {
               Spacer(),
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

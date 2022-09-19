@@ -2,17 +2,18 @@ import 'package:flutter/material.dart';
 import 'pages/login_page.dart';
 
 void main() async {
-  runApp(const MyApp());
+  runApp(const MyRedrApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyRedrApp extends StatelessWidget {
+  const MyRedrApp({super.key});
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Redr for Reddit',
+      home: MyHomePage(),
       theme: ThemeData(
         backgroundColor: Colors.black,
         scaffoldBackgroundColor: Colors.black,
@@ -23,9 +24,9 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({
+    super.key,
+  });
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -35,8 +36,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return const Material(
-      child: LoginPage(),
-      color: Colors.black,
+      child: Scaffold(
+        body: LoginPage(),
+      ),
     );
   }
 }
